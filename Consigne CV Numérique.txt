@@ -1,0 +1,28 @@
+Deadline 5 décembre:
+
+1. Page d'acceuil :
+- Illustration + Titre (Florian GAMBIRASIO)
+- Texte présentation moi (5-10 lignes)
+
+2. Formation :
+- BUT Info 	)
+	   	}CC CV avec illu
+- Bac		)
+
+3. Projets Informatique
+- 2 Projet de BUT 1
+- 1 Projet de BUT 2
+
+présentation projet : 
+- Titre
+- illu
+- présentation (2-3) lignes
+- lien détail du projet
+- lien git
+
+4. Centre d'intérêt ou Compétence
+
+5. Page contact
+- Compte LinkedIn
+
+6. Expériences (facultatif)
