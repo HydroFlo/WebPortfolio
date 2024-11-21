@@ -1,7 +1,7 @@
 header {
     text-align: center;
     padding-bottom: 1%;
-    background-color: rgba(210,210,210,0.7);
+    /*background-color: rgba(210,210,210,0.7);*//
 }
 
 header nav {
@@ -31,13 +31,13 @@ h1 {
 }
 
 body {
-    background-image: url("../img/anime_landscape.jpg");
+    /*background-image: url("../img/anime_landscape.jpg");*/
 }
 
 p#presentation {
     font-size: 20px;
     font-family: "Times New Roman";
-    background-color: rgba(210,210,210,0.7);
+    //*background-color: rgba(210,210,210,0.7);*/
     text-align: justify;
     width: 50%;
     padding-left: 25%;
@@ -51,13 +51,16 @@ p{
     font-family: "Comic Sans MS";
     background-color: #FFF;
     text-align: justify;
-    background-color: rgba(210,210,210,0.7);
+    /*background-color: rgba(210,210,210,0.7);*/
     padding-top: 1%;
     padding-bottom: 1%;
 }
 
-ul {
+ul{
     font-size: 22px;
+}
+
+ul#listeProjet li{
     background-color: rgba(210,210,210,0.7);
 }
 
