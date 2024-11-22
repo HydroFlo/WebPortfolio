@@ -5,6 +5,7 @@ header {
 }
 
 header nav {
+    position: fixed;
     background-color: #BBB;
     font-size: 18px;
     text-align: center;
@@ -15,6 +16,10 @@ header nav {
 
 a:hover{
     background-color: #EEF;
+}
+
+header h1{
+    margin-top: 7%;
 }
 
 nav a{
@@ -30,10 +35,6 @@ h1 {
     
 }
 
-body {
-    /*background-image: url("../img/anime_landscape.jpg");*/
-}
-
 p#presentation {
     font-size: 20px;
     font-family: "Times New Roman";
@@ -42,7 +43,6 @@ p#presentation {
     width: 50%;
     padding-left: 25%;
     padding-right: 25%;
-    clear:right;
     
 }
 
@@ -60,12 +60,22 @@ ul{
     font-size: 22px;
 }
 
-ul#listeProjet li{
-    background-color: rgba(210,210,210,0.7);
+ul#listeProjet{
+    margin-left: 8%;
+    margin-right: 8%;
 }
 
+ul#listeProjet li{
+    background-color: rgba(210,210,210,0.7);
+    list-style-type:disclosure-closed;
+}
 ul#formation{
-    background-color: #DFD;
+    margin-left: 8%
+}
+
+ul#formation li{
+    list-style-type:disclosure-closed;
+    text-decoration: double underline;
 }
 
 h2{
@@ -77,31 +87,61 @@ h2{
 }
 
 ul#contact{
+    margin-left: 35%;
     list-style-type: none;
-    text-align: center;
+    text-align: left;
 }
 
-
-ul#listeProjet{
-    list-style-type:disclosure-closed
+ul#contact li{
+    margin-top: 4%;
 }
 
-footer{
-    /*position: fixed;*/
-    bottom: 0;
+ul#contact img{
+    float: none;
+    width: 5%
+}
+
+ul#CentreInteret{
+    list-style-type:disclosure-closed;
+    margin-left: 15%;
+}
+
+ul#CentreInteret>li{
+    margin-top: 1%;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+footer {
+    margin-top: auto;
     text-align: center;
     width: 100%;
     background-color: #BBB;
-    float: right;
+    margin-top:auto;
 }
 
 img{
-    margin-left: 5%;
-    width: 8%;
-    float: left;
+    margin-left: 10%;
+    width: 5%;
+}
+
+img#PhotoMoi{
+    margin-right: 10%;
+    width: 6%;
+    float: right;
 }
 
 img#HSR, img#P5R{
     width: 3%;
+    float: none; 
+}
+
+img#MAL{
+    width: 3%;
     float: none;
+    margin-left: 1%;
 }
