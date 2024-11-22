@@ -87,14 +87,21 @@ ul#listeProjet{
 }
 
 footer{
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0;
     text-align: center;
     width: 100%;
     background-color: #BBB;
+    float: right;
 }
 
 img{
+    margin-left: 5%;
     width: 8%;
-    float: right;
+    float: left;
+}
+
+img#HSR, img#P5R{
+    width: 3%;
+    float: none;
 }
