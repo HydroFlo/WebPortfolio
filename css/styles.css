@@ -86,19 +86,25 @@ h2{
     padding-bottom: 1%;
 }
 
-ul#contact{
-    margin-left: 35%;
-    list-style-type: none;
+#contact ul{
+    margin-top: 0%;
+    margin-left: 25%;
+    list-style-type:disclosure-closed;
     text-align: left;
 }
 
-ul#contact li{
-    margin-top: 4%;
+#contact ul li{
+    margin-top: 3%;
 }
 
-ul#contact img{
-    float: none;
-    width: 5%
+#contact ul img{
+    width: 5%;
+    margin-left: 0%;
+}
+
+#contact>p{
+    font-size: 20px;
+    margin-left: 15%;
 }
 
 ul#CentreInteret{
