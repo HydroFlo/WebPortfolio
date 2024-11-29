@@ -70,7 +70,7 @@ ul#listeProjet li{
     list-style-type:disclosure-closed;
 }
 ul#formation{
-    margin-left: 8%
+    margin-left: 13%
 }
 
 ul#formation li{
@@ -110,6 +110,12 @@ ul#CentreInteret>li{
     margin-top: 1%;
 }
 
+ul#formation img{
+    float: right;
+    width: 7%;
+    margin-right: 35%;
+}
+
 body {
     height: 100vh;
     display: flex;
@@ -144,4 +150,14 @@ img#MAL{
     width: 3%;
     float: none;
     margin-left: 1%;
+}
+
+ul#listeProjet img{
+    margin-left: 40%;
+    width: 20%;
+}
+img#MadokaMagica, img#SAO, img#Toaru, img#Tensura, img#DAL{
+    width: 11%;
+    margin-top: 1%;
+    margin-left: 3%;
 }
