@@ -34,7 +34,7 @@ nav a{
 }
 
 h1 {
-    font-family: : "Comic Sans MS";
+    font-family: "Comic Sans MS";
     font-size: 36px;
     
 }
@@ -42,7 +42,7 @@ h1 {
 p#presentation {
     font-size: 20px;
     font-family: "Times New Roman";
-    //*background-color: rgba(210,210,210,0.7);*/
+    /*background-color: rgba(210,210,210,0.7);*/
     text-align: justify;
     width: 50%;
     padding-left: 25%;
