@@ -4,6 +4,146 @@
     <title>CV de Florian GAMBIRASIO : Formation</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <style>
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .formation-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px 64px;
+        }
+
+        /* ── Timeline ── */
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--color-accent), var(--color-border));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+            animation: fadeUp 0.5s ease both;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.05s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+
+        .timeline-dot {
+            position: absolute;
+            left: -28px;
+            top: 14px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--color-accent);
+            border: 3px solid var(--color-bg);
+            box-shadow: 0 0 0 2px var(--color-accent);
+        }
+
+        .formation-card {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 14px;
+            padding: 24px 28px;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+
+        .formation-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 20px rgba(200, 169, 110, 0.1);
+        }
+
+        .formation-logo {
+            width: clamp(52px, 7%, 72px);
+            height: clamp(52px, 7%, 72px);
+            object-fit: contain;
+            border-radius: 8px;
+            background-color: var(--color-bg);
+            padding: 4px;
+            border: 1px solid var(--color-border);
+            flex-shrink: 0;
+            margin: 0;
+        }
+
+        .formation-body {
+            flex: 1;
+        }
+
+        .formation-period {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            background-color: rgba(200, 169, 110, 0.1);
+            border-radius: 999px;
+            padding: 3px 10px;
+            margin-bottom: 10px;
+        }
+
+        .formation-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--color-text);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .formation-detail {
+            font-size: 14px;
+            color: var(--color-muted);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .formation-school {
+            font-size: 13px;
+            color: var(--color-muted);
+            font-style: italic;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* ── Tags compétences ── */
+        .formation-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .formation-tag {
+            font-size: 12px;
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 999px;
+            padding: 3px 10px;
+            color: var(--color-muted);
+        }
+
+        @media (max-width: 560px) {
+            .formation-card { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -11,22 +151,62 @@
             <a href="index.html">Accueil</a>
             <a href="Formation.html">Formation</a>
             <a href="Projet.html">Projet informatique</a>
-            <a href="CentreInteret.html">Centre d'interet</a>
+            <a href="CentreInteret.html">Centre d'intérêt</a>
             <a href="Contact.html">Contact</a>
         </nav>
         <h1>CV de Florian GAMBIRASIO</h1>
-        <h4>Étudiant en BUT info, parcours réalisation d’applications</h4>
-        
+        <h4>Étudiant en BUT info, parcours réalisation d'applications</h4>
     </header>
+
     <h2>Formation</h2>
-    <ul id="formation">
-        <img src="img/LogoUniv.png" alt="LogoUniv">
-        <li>BUT informatique (2023 - )</li>
-        <p>Parcours réalisation d'applications : conception, développement, validation<br><i>IUT de Lille</i></p>
-        <img src="img/Facade_Kernanec_2016.jpg" alt="Facade_Kernanec_2016">
-        <li>Bac Général (2020 - 2023)</li>
-        <p>Spécialités NSI et Mathématiques, section européenne - Anglais<br><i>Lycée Kernanec</i> </p>
-    </ul>
+
+    <div class="formation-wrapper">
+        <div class="timeline">
+
+            <!-- BUT Informatique -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="formation-card">
+                    <img class="formation-logo" src="img/LogoUniv.png" alt="IUT de Lille">
+                    <div class="formation-body">
+                        <span class="formation-period">2023 — en cours</span>
+                        <div class="formation-title">BUT Informatique</div>
+                        <p class="formation-detail">Parcours réalisation d'applications : conception, développement, validation</p>
+                        <span class="formation-school">IUT de Lille</span>
+                        <div class="formation-tags">
+                            <span class="formation-tag">Java</span>
+                            <span class="formation-tag">Python</span>
+                            <span class="formation-tag">PostgreSQL</span>
+                            <span class="formation-tag">Méthode Agile</span>
+                            <span class="formation-tag">Réseaux</span>
+                            <span class="formation-tag">Algorithmique</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bac Général -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="formation-card">
+                    <img class="formation-logo" src="img/Facade_Kernanec_2016.jpg" alt="Lycée Kernanec">
+                    <div class="formation-body">
+                        <span class="formation-period">2020 — 2023</span>
+                        <div class="formation-title">Baccalauréat Général</div>
+                        <p class="formation-detail">Spécialités NSI et Mathématiques · Section européenne Anglais</p>
+                        <span class="formation-school">Lycée Kernanec</span>
+                        <div class="formation-tags">
+                            <span class="formation-tag">NSI</span>
+                            <span class="formation-tag">Mathématiques</span>
+                            <span class="formation-tag">Section européenne</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <footer>
         <h3>2024 © Florian Gambirasio</h3>
     </footer>

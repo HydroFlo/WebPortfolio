@@ -4,6 +4,171 @@
     <title>CV de Florian GAMBIRASIO : Centres d'intérêts</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <style>
+        /* ── Page-specific styles ── */
+
+        .interests-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px 64px;
+        }
+
+        /* ── Category card ── */
+        .interest-card {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 14px;
+            padding: 28px 32px;
+            margin-bottom: 24px;
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+
+        .interest-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 20px rgba(200, 169, 110, 0.12);
+        }
+
+        .interest-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--color-text);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .interest-card h3::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--color-accent);
+            flex-shrink: 0;
+        }
+
+        /* ── Jeux vidéo : tags ── */
+        .game-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .game-tags li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 999px;
+            padding: 6px 16px 6px 10px;
+            font-size: 15px;
+            font-weight: 400;
+            transition: border-color var(--transition), transform var(--transition);
+        }
+
+        .game-tags li:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .game-tags li img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            border-radius: 4px;
+            margin: 0;
+        }
+
+        /* ── Anime : grille d'images ── */
+        .anime-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .anime-grid img {
+            width: 100%;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+            display: block;
+            margin: 0;
+        }
+
+        .anime-grid img:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .anime-note {
+            font-size: 15px;
+            color: var(--color-muted);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .anime-note a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .anime-note img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+            border-radius: 3px;
+            vertical-align: middle;
+            margin: 0;
+        }
+
+        /* ── Rédaction ── */
+        .writing-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .writing-icon {
+            font-size: 2rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .writing-block p {
+            margin: 0;
+            color: var(--color-muted);
+            font-size: 15px;
+            line-height: 1.75;
+        }
+
+        /* ── Animations d'entrée ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .interest-card {
+            animation: fadeUp 0.45s ease both;
+        }
+
+        .interest-card:nth-child(1) { animation-delay: 0.05s; }
+        .interest-card:nth-child(2) { animation-delay: 0.15s; }
+        .interest-card:nth-child(3) { animation-delay: 0.25s; }
+    </style>
 </head>
 <body>
     <header>
@@ -11,29 +176,64 @@
             <a href="index.html">Accueil</a>
             <a href="Formation.html">Formation</a>
             <a href="Projet.html">Projet informatique</a>
-            <a href="CentreInteret.html">Centre d'interet</a>
+            <a href="CentreInteret.html">Centre d'intérêt</a>
             <a href="Contact.html">Contact</a>
         </nav>
         <h1>CV de Florian GAMBIRASIO</h1>
         <h4>Étudiant en BUT info, parcours réalisation d'applications</h4>
-        
     </header>
-    <h2>Centres d'intérêts</h2>
-    <ul id="CentreInteret">
-        <li>Jeux Vidéo</li>
-        <ul id="jeu_video">
-            <li>Gacha <img id="HSR" src="img/LogoHSR.png" alt="LogoHSR"></li>
-            <li>RPG <img id="P5R" src="img/LogoP5R.png" alt="LogoP5R"></li>
-        </ul>
-        <li>Animation japonaise</li>
-        <img id="MadokaMagica" src="img/MadokaMagica.jpg" alt="MadokaMagica">
-        <img id="SAO" src="img/SAO.jpg" alt="SAO">
-        <img id="Toaru" src="img/Toaru.png" alt="Toaru">
-        <img id="Tensura" src="img/Tensura.jpg" alt="Tensura">
-        <img id="DAL" src="img/DAL.jpg" alt="DAL">
-        <p>Je suis un grand fan d'anime et j'en regarde beaucoup depuis longtemps (<a id="listeAnime" href="https://myanimelist.net/animelist/HydroFlo">lien de mon myanimelist</a><img id="MAL" src="img/LogoMAL.png" alt="MAL">) </p>
 
-    </ul>
+    <h2>Centres d'intérêts</h2>
+
+    <div class="interests-wrapper">
+
+        <!-- Jeux vidéo -->
+        <div class="interest-card">
+            <h3>Jeux vidéo</h3>
+            <ul class="game-tags">
+                <li>
+                    <img src="img/LogoHSR.png" alt="Honkai Star Rail">
+                    Gacha — Honkai Star Rail
+                </li>
+                <li>
+                    <img src="img/LogoP5R.png" alt="Persona 5 Royal">
+                    RPG — Persona 5 Royal
+                </li>
+            </ul>
+        </div>
+
+        <!-- Animation japonaise -->
+        <div class="interest-card">
+            <h3>Animation japonaise</h3>
+            <div class="anime-grid">
+                <img src="img/MadokaMagica.jpg" alt="Puella Magi Madoka Magica">
+                <img src="img/SAO.jpg" alt="Sword Art Online">
+                <img src="img/Toaru.png" alt="Toaru">
+                <img src="img/Tensura.jpg" alt="Tensura">
+                <img src="img/DAL.jpg" alt="Date A Live">
+            </div>
+            <p class="anime-note">
+                Grand fan d'anime depuis longtemps — retrouvez ma liste complète sur
+                <a href="https://myanimelist.net/animelist/HydroFlo" target="_blank">
+                    MyAnimeList
+                    <img src="img/LogoMAL.png" alt="MAL">
+                </a>
+            </p>
+        </div>
+
+        <!-- Rédaction -->
+        <div class="interest-card">
+            <h3>Rédaction de guides</h3>
+            <div class="writing-block">
+                <span class="writing-icon">✍️</span>
+                <p>
+                    Je rédige des guides stratégiques pour <strong>Honkai Star Rail</strong>, ce qui m'amène à synthétiser des informations issues de multiples sources pour les rendre claires et accessibles. Une habitude qui nourrit directement ma rigueur en documentation technique.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
     <footer>
         <h3>2024 © Florian Gambirasio</h3>
     </footer>

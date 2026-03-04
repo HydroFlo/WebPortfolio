@@ -1,9 +1,176 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-    <title>CV de Florian GAMBIRASIO : Page d'accueil</title>
+    <title>CV de Florian GAMBIRASIO : Accueil</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <style>
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px 64px;
+        }
+
+        /* ── Profil card ── */
+        .profile-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 36px;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 32px 36px;
+            margin-bottom: 32px;
+            animation: fadeUp 0.5s ease both 0.05s;
+        }
+
+        .profile-photo {
+            width: clamp(80px, 10vw, 110px);
+            height: clamp(80px, 10vw, 110px);
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--color-accent);
+            flex-shrink: 0;
+            margin: 0;
+        }
+
+        .profile-text h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--color-accent);
+            margin-bottom: 4px;
+            letter-spacing: 0.02em;
+        }
+
+        .profile-text p {
+            font-size: 15px;
+            color: var(--color-muted);
+            margin: 0;
+            line-height: 1.75;
+        }
+
+        /* ── Logo université ── */
+        .univ-logo {
+            width: clamp(40px, 6%, 60px) !important;
+            height: auto;
+            margin: 0 0 2px 0 !important;
+            display: inline-block;
+            vertical-align: middle;
+            opacity: 0.7;
+        }
+
+        /* ── Présentation block ── */
+        .presentation-block {
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-left: 4px solid var(--color-accent);
+            border-radius: 0 12px 12px 0;
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            animation: fadeUp 0.5s ease both 0.15s;
+        }
+
+        .presentation-block p {
+            font-size: 16px;
+            color: var(--color-muted);
+            line-height: 1.9;
+            margin: 0;
+            text-align: justify;
+        }
+
+        .presentation-block p + p {
+            margin-top: 16px;
+        }
+
+        /* ── Skills rapides ── */
+        .skills-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            animation: fadeUp 0.5s ease both 0.25s;
+        }
+
+        .skill-chip {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 999px;
+            padding: 6px 16px;
+            font-size: 14px;
+            font-family: var(--font-body);
+            color: var(--color-text);
+            font-weight: 400;
+            transition: border-color var(--transition), transform var(--transition);
+        }
+
+        .skill-chip:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .skill-chip.accent {
+            background-color: rgba(200, 169, 110, 0.12);
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        /* ── CTA stage ── */
+        .cta-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, rgba(200,169,110,0.15) 0%, rgba(238,234,226,0.6) 100%);
+            border: 1px solid var(--color-accent);
+            border-radius: 12px;
+            padding: 20px 28px;
+            margin-top: 32px;
+            animation: fadeUp 0.5s ease both 0.35s;
+        }
+
+        .cta-banner p {
+            margin: 0;
+            font-size: 15px;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        .cta-banner span {
+            font-size: 13px;
+            color: var(--color-muted);
+            font-weight: 300;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .cta-btn {
+            background-color: var(--color-accent);
+            color: #fff !important;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: opacity var(--transition), transform var(--transition);
+            flex-shrink: 0;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 600px) {
+            .profile-card { flex-direction: column; align-items: center; text-align: center; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -11,18 +178,58 @@
             <a href="index.html">Accueil</a>
             <a href="Formation.html">Formation</a>
             <a href="Projet.html">Projet informatique</a>
-            <a href="CentreInteret.html">Centre d'interet</a>
+            <a href="CentreInteret.html">Centre d'intérêt</a>
             <a href="Contact.html">Contact</a>
         </nav>
         <h1>CV de Florian GAMBIRASIO</h1>
-        <h4>Étudiant en BUT info, parcours réalisation d’applications</h4>
+        <h4>Étudiant en BUT info, parcours réalisation d'applications</h4>
     </header>
+
     <h2>Présentation</h2>
-    <p><img src="img/LogoUniv.png" alt="LogoUniv"><img id="PhotoMoi" src="img/PhotoMoi.png" alt="Photo Florian Gambirasio"></p>
-    <p id="presentation">
-        Je suis actuellement étudiant en 2e année de BUT informatique à l'université de Lille. Je suis en recherche d'un stage de 10 semaines à partir du 1er avril 2025 en développement, principalement en back-end, qui me permettra d'améliorer mes compétences et de m'offrir une première expérience professionnelle. J'ai déjà réalisé un jeu en Python grâce à la librairie Pixel, ainsi qu'un Othello en Java. Lors d'un des projets de mon BUT, j'ai aussi dû restructurer des données de Parcoursup dans une base de données que je devais créer avec PostgreSQL.
-        <br>Sur mon temps libre, je rédige également des guides de jeux vidéo (sur Honkai Star Rail), ce qui m'incite à chercher des informations à travers différentes sources et à les résumer afin de les rendre plus compactes et faciles à comprendre pour autrui.
-    </p>
+
+    <div class="hero">
+
+        <!-- Profil -->
+        <div class="profile-card">
+            <img class="profile-photo" src="img/PhotoMoi.png" alt="Florian Gambirasio">
+            <div class="profile-text">
+                <h3>
+                    <img class="univ-logo" src="img/LogoUniv.png" alt="IUT de Lille">
+                    Florian Gambirasio
+                </h3>
+                <p>Étudiant en 3e année de BUT Informatique — IUT de Lille<br>
+                Parcours <strong>réalisation d'applications : conception, développement, validation</strong></p>
+            </div>
+        </div>
+
+        <!-- Présentation -->
+        <div class="presentation-block">
+            <p>Je suis actuellement étudiant en 3e année de BUT informatique à l'université de Lille. Je suis en recherche d'un <strong>stage de 10 semaines à partir du 1er avril 2025</strong> en développement, principalement en back-end, qui me permettra d'améliorer mes compétences et de m'offrir une première expérience professionnelle.</p>
+            <p>J'ai déjà réalisé un jeu en Python grâce à la librairie Pixel, ainsi qu'un Othello en Java. Lors d'un des projets de mon BUT, j'ai aussi dû restructurer des données de Parcoursup dans une base de données que je devais créer avec PostgreSQL. Sur mon temps libre, je rédige également des guides de jeux vidéo (sur Honkai Star Rail), ce qui m'incite à chercher des informations à travers différentes sources et à les résumer.</p>
+        </div>
+
+        <!-- Compétences -->
+        <div class="skills-row">
+            <span class="skill-chip accent">Recherche de stage — Mars 2026</span>
+            <span class="skill-chip">Java</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">PostgreSQL</span>
+            <span class="skill-chip">Back-end</span>
+            <span class="skill-chip">Méthode Agile</span>
+            <span class="skill-chip">Git / GitLab</span>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-banner">
+            <div>
+                <p>Disponible pour un stage de développement</p>
+                <span>10 semaines · À partir du 1er avril 2025 · Métropole lilloise</span>
+            </div>
+            <a class="cta-btn" href="Contact.html">Me contacter →</a>
+        </div>
+
+    </div>
+
     <footer>
         <h3>2024 © Florian Gambirasio</h3>
     </footer>

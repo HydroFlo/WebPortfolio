@@ -1,9 +1,152 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-    <title>CV de Florian GAMBIRASIO : Projet</title>
+    <title>CV de Florian GAMBIRASIO : Projets</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <style>
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .projects-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* ── Project card ── */
+        .project-card {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            transition: border-color var(--transition), box-shadow var(--transition);
+            animation: fadeUp 0.5s ease both;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.05s; }
+        .project-card:nth-child(2) { animation-delay: 0.15s; }
+        .project-card:nth-child(3) { animation-delay: 0.25s; }
+
+        .project-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 6px 28px rgba(200, 169, 110, 0.12);
+        }
+
+        .project-body {
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .project-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .project-title:hover {
+            color: var(--color-accent);
+            opacity: 1;
+        }
+
+        .project-link-icon {
+            font-size: 12px;
+            color: var(--color-accent);
+            border: 1px solid var(--color-accent);
+            border-radius: 4px;
+            padding: 2px 7px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            transition: background-color var(--transition), color var(--transition);
+            white-space: nowrap;
+        }
+
+        .project-link-icon:hover {
+            background-color: var(--color-accent);
+            color: #fff;
+            opacity: 1;
+        }
+
+        .project-desc {
+            font-size: 15px;
+            color: var(--color-muted);
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .project-tag {
+            font-size: 12px;
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 999px;
+            padding: 3px 10px;
+            color: var(--color-muted);
+            font-family: var(--font-body);
+        }
+
+        /* ── Project image panel ── */
+        .project-image {
+            background-color: var(--color-bg);
+            border-left: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            max-height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 0;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.04);
+        }
+
+        @media (max-width: 640px) {
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+            .project-image {
+                border-left: none;
+                border-top: 1px solid var(--color-border);
+                max-height: 180px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -11,25 +154,78 @@
             <a href="index.html">Accueil</a>
             <a href="Formation.html">Formation</a>
             <a href="Projet.html">Projet informatique</a>
-            <a href="CentreInteret.html">Centre d'interet</a>
+            <a href="CentreInteret.html">Centre d'intérêt</a>
             <a href="Contact.html">Contact</a>
         </nav>
         <h1>CV de Florian GAMBIRASIO</h1>
         <h4>Étudiant en BUT info, parcours réalisation d'applications</h4>
-        
     </header>
+
     <h2>Projets</h2>
-    <ul id="listeProjet">
-        <li><a href="https://gitlab.univ-lille.fr/2024-projet-agile-de-rentree/groupe-11">Othello</a></li>
-        <p>Recréation complète du jeu <a href="https://fr.wikipedia.org/wiki/Othello_(jeu)">Othello</a> en Java dans le cadre d'un mini-projet Agile en groupe de 6, en appliquant les principes de la méthodologie Agile (décomposition des tâches, estimation de leur poids respectif et répartition en sprints de 1h30). Le jeu fonctionne dans le terminal et permet de jouer une partie d'Othello soit contre un autre joueur en local, soit contre un ordinateur.</p>
-        <img src="img/Othello.png" alt="Othello">
-        <li><a href="https://github.com/HydroFlo/-SAE2.01-2.02">Application de calcul d'itinéraire</a></li>
-        <p>Cette application permet, à partir d'un fichier CSV contenant des routes entre deux points (par exemple, des villes), le mode de transport emprunté (train, avion, bus) et des données pouvant être intéressantes pour choisir un trajet plutôt qu'un autre (coût en CO2, temps, prix), de générer un graphe permettant de déterminer le chemin le plus court pour aller d'un départ à une destination, tout en favorisant les critères sélectionnés par l'utilisateur.</p>
-        <img src="img/AppliTrajet.png" alt="AppliTrajet">
-        <li><a href="https://gitlab.univ-lille.fr/florian.gambirasio.etu/Labyrinthe-Perdu">Labyrinthe Perdu</a></li>
-        <p>Jeu réalisé en Java (à l'aide d'une bibliothèque fournie par le BUT). Il s'agit d'un jeu ludopédagogique qui se lance dans un terminal. Le personnage peut se déplacer à travers un labyrinthe généré aléatoirement, où il pourra rencontrer des monstres qui lui poseront des questions. Si vous répondez correctement, vous augmentez votre score ; sinon, vous perdez de la vie. Le jeu se termine dès que votre vie atteint 0 ou si vous parvenez à vaincre le boss au centre du labyrinthe.</p>
-        <img src="img/LabyrinthePerdu.png" alt="Labyrinthe-Perdu">
-    </ul>
+
+    <div class="projects-wrapper">
+
+        <!-- Othello -->
+        <div class="project-card">
+            <div class="project-body">
+                <div class="project-header">
+                    <a class="project-title" href="https://gitlab.univ-lille.fr/2024-projet-agile-de-rentree/groupe-11" target="_blank">Othello</a>
+                    <a class="project-link-icon" href="https://gitlab.univ-lille.fr/2024-projet-agile-de-rentree/groupe-11" target="_blank">GitLab ↗</a>
+                </div>
+                <p class="project-desc">Recréation complète du jeu <a href="https://fr.wikipedia.org/wiki/Othello_(jeu)" target="_blank">Othello</a> en Java dans le cadre d'un mini-projet Agile en groupe de 6. Application des principes Agile : décomposition des tâches, estimation et répartition en sprints de 1h30. Le jeu fonctionne en terminal, contre un joueur local ou contre un ordinateur.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Java</span>
+                    <span class="project-tag">Méthode Agile</span>
+                    <span class="project-tag">Terminal</span>
+                    <span class="project-tag">Groupe de 6</span>
+                </div>
+            </div>
+            <div class="project-image">
+                <img src="img/Othello.png" alt="Othello">
+            </div>
+        </div>
+
+        <!-- Application itinéraire -->
+        <div class="project-card">
+            <div class="project-body">
+                <div class="project-header">
+                    <a class="project-title" href="https://github.com/HydroFlo/-SAE2.01-2.02" target="_blank">Application de calcul d'itinéraire</a>
+                    <a class="project-link-icon" href="https://github.com/HydroFlo/-SAE2.01-2.02" target="_blank">GitHub ↗</a>
+                </div>
+                <p class="project-desc">Application Java qui lit un fichier CSV de routes (villes, modes de transport, CO₂, temps, prix) et génère un graphe pour déterminer le chemin optimal selon les critères choisis par l'utilisateur.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Java</span>
+                    <span class="project-tag">Algorithmes de graphe</span>
+                    <span class="project-tag">CSV</span>
+                </div>
+            </div>
+            <div class="project-image">
+                <img src="img/AppliTrajet.png" alt="Application Trajet">
+            </div>
+        </div>
+
+        <!-- Labyrinthe Perdu -->
+        <div class="project-card">
+            <div class="project-body">
+                <div class="project-header">
+                    <a class="project-title" href="https://gitlab.univ-lille.fr/florian.gambirasio.etu/Labyrinthe-Perdu" target="_blank">Labyrinthe Perdu</a>
+                    <a class="project-link-icon" href="https://gitlab.univ-lille.fr/florian.gambirasio.etu/Labyrinthe-Perdu" target="_blank">GitLab ↗</a>
+                </div>
+                <p class="project-desc">Jeu ludopédagogique en Java avec labyrinthe généré aléatoirement. Le joueur affronte des monstres qui posent des questions : bonne réponse → score augmenté, mauvaise → perte de vie. L'objectif est de vaincre le boss central avant de perdre toute sa vie.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Java</span>
+                    <span class="project-tag">Génération procédurale</span>
+                    <span class="project-tag">Ludopédagogie</span>
+                    <span class="project-tag">Terminal</span>
+                </div>
+            </div>
+            <div class="project-image">
+                <img src="img/LabyrinthePerdu.png" alt="Labyrinthe Perdu">
+            </div>
+        </div>
+
+    </div>
+
     <footer>
         <h3>2024 © Florian Gambirasio</h3>
     </footer>
