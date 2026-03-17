@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <title>CV de Florian GAMBIRASIO : Expériences</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <style>
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .experience-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px 64px;
+        }
+
+        /* ── Timeline ── */
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--color-accent), var(--color-border));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+            animation: fadeUp 0.5s ease both;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.05s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+
+        .timeline-dot {
+            position: absolute;
+            left: -28px;
+            top: 20px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--color-accent);
+            border: 3px solid var(--color-bg);
+            box-shadow: 0 0 0 2px var(--color-accent);
+        }
+
+        /* ── Experience card ── */
+        .experience-card {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+
+        .experience-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 20px rgba(200, 169, 110, 0.1);
+        }
+
+        /* ── Card header ── */
+        .experience-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 24px 28px 20px;
+            border-bottom: 1px solid var(--color-border);
+            flex-wrap: wrap;
+        }
+
+        .experience-meta {
+            flex: 1;
+        }
+
+        .experience-period {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            background-color: rgba(200, 169, 110, 0.1);
+            border-radius: 999px;
+            padding: 3px 10px;
+            margin-bottom: 10px;
+        }
+
+        .experience-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--color-text);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .experience-company {
+            font-size: 14px;
+            color: var(--color-muted);
+            font-style: italic;
+        }
+
+        .experience-type {
+            font-size: 12px;
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 999px;
+            padding: 4px 12px;
+            color: var(--color-muted);
+            white-space: nowrap;
+            align-self: flex-start;
+            margin-top: 4px;
+        }
+
+        /* ── Card body ── */
+        .experience-body {
+            padding: 20px 28px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .experience-summary {
+            font-size: 15px;
+            color: var(--color-muted);
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        /* ── Missions list ── */
+        .missions-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+            color: var(--color-muted);
+            margin-bottom: 10px;
+        }
+
+        .missions-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0;
+        }
+
+        .missions-list li {
+            font-size: 14px;
+            color: var(--color-text);
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .missions-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: var(--color-accent);
+        }
+
+        /* ── Pratiques ── */
+        .practices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .practice-item {
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 10px 14px;
+        }
+
+        .practice-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+            color: var(--color-accent);
+            margin-bottom: 4px;
+        }
+
+        .practice-value {
+            font-size: 13px;
+            color: var(--color-muted);
+            line-height: 1.5;
+        }
+
+        /* ── Tags ── */
+        .experience-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .experience-tag {
+            font-size: 12px;
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 999px;
+            padding: 3px 10px;
+            color: var(--color-muted);
+            font-family: var(--font-body);
+        }
+
+        /* ── Autonomie badge ── */
+        .autonomy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        .autonomy-badge::before {
+            content: '★★★';
+            color: var(--color-accent);
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="Formation.html">Formation</a>
+            <a href="Experience.html">Expériences</a>
+            <a href="Projet.html">Projet informatique</a>
+            <a href="CentreInteret.html">Centre d'intérêt</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+        <h1>CV de Florian GAMBIRASIO</h1>
+        <h4>Étudiant en BUT info, parcours réalisation d'applications</h4>
+    </header>
+
+    <h2>Expériences professionnelles</h2>
+
+    <div class="experience-wrapper">
+        <div class="timeline">
+
+            <!-- Stage L2EP -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="experience-card">
+
+                    <div class="experience-header">
+                        <div class="experience-meta">
+                            <span class="experience-period">2025 · 10 semaines</span>
+                            <div class="experience-title">Développement logiciel — Maintenance &amp; nouvelles fonctionnalités</div>
+                            <div class="experience-company">L2EP — Laboratoire d'Électrotechnique et d'Électronique de Puissance de Lille</div>
+                        </div>
+                        <span class="experience-type">Stage</span>
+                    </div>
+
+                    <div class="experience-body">
+
+                        <p class="experience-summary">
+                            Mise à jour d'un logiciel scientifique développé en interne, avec interface graphique PyQt. Travail en autonomie totale pour répondre aux demandes d'ajout de fonctionnalités du laboratoire, avec collaboration ponctuelle avec d'autres stagiaires pour l'intégration d'un logiciel tiers.
+                        </p>
+
+                        <div>
+                            <div class="missions-title">Missions</div>
+                            <ul class="missions-list">
+                                <li>Ajout de nouvelles fonctionnalités souhaitées par le laboratoire dans un logiciel Python existant</li>
+                                <li>Correction de problèmes présents dans le logiciel (maintenance applicative)</li>
+                                <li>Collaboration avec d'autres stagiaires pour intégrer un logiciel tiers dans l'application</li>
+                                <li>Écriture et mise à jour des tests pour garantir la non-régression et la validité des nouveaux développements</li>
+                                <li>Rédaction de documentation technique expliquant les ajouts et modifications effectués</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <div class="missions-title">Bonnes pratiques</div>
+                            <div class="practices-grid">
+                                <div class="practice-item">
+                                    <div class="practice-label">Tests</div>
+                                    <div class="practice-value">Écriture et modification des tests pour couvrir les nouveaux ajouts et valider les fonctionnalités existantes</div>
+                                </div>
+                                <div class="practice-item">
+                                    <div class="practice-label">Documentation</div>
+                                    <div class="practice-value">Rédaction d'une documentation détaillant chaque ajout et modification, avec explications de reproduction</div>
+                                </div>
+                                <div class="practice-item">
+                                    <div class="practice-label">Versioning</div>
+                                    <div class="practice-value">Travail sur une branche dédiée, sans merge sur la branche principale avant validation</div>
+                                </div>
+                                <div class="practice-item">
+                                    <div class="practice-label">Autonomie</div>
+                                    <div class="practice-value"><span class="autonomy-badge">Totale</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-tags">
+                            <span class="experience-tag">Python</span>
+                            <span class="experience-tag">PyQt</span>
+                            <span class="experience-tag">Tests unitaires</span>
+                            <span class="experience-tag">Git</span>
+                            <span class="experience-tag">Documentation</span>
+                            <span class="experience-tag">Maintenance applicative</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder future expérience -->
+            <div class="timeline-item" style="opacity: 0.4;">
+                <div class="timeline-dot" style="background-color: var(--color-border); box-shadow: 0 0 0 2px var(--color-border);"></div>
+                <div class="experience-card" style="border-style: dashed; background-color: transparent;">
+                    <div class="experience-header" style="border-bottom: none;">
+                        <div class="experience-meta">
+                            <span class="experience-period" style="background: none; border: 1px dashed var(--color-border); color: var(--color-muted);">À venir</span>
+                            <div class="experience-title" style="color: var(--color-muted);">Prochaine expérience</div>
+                            <div class="experience-company">Stage de fin d'études · 16 semaines</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <h3>2024 © Florian Gambirasio</h3>
+    </footer>
+</body>
+</html>
